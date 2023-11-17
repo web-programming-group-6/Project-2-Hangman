@@ -7,24 +7,27 @@ body {
     margin: 0 auto;
     background: white; /* Ensure the game container has a white background */
     width: 1060px;
-    height: 920px;
-    padding: 5px;
     border: 1px solid #000; /* Thin black border */
     border-radius: 3px;
     text-align: center;
+    padding-bottom: 10px; /* Add padding at the bottom */
+    box-sizing: border-box; /* Include padding and border in the width and height */
 }
 
 .game-title {
     color: red;
-    font-family: cursive;
+    font-family: pirate;
 }
 
-/* Removed .game-image-container since it's now redundant with .game-container styling */
+.game-image-container {
+    /* If you want to apply specific styles to this container, do it here */
+}
 
 .game-image {
     width: 80%;
     display: inline-block;
 }
+
 
 .game-status, .won-message, .lost-message {
     font-family: cursive;
@@ -66,7 +69,6 @@ body {
 .guess-letter {
     color: black;
     font-size: 35px;
-    border-bottom: 3px solid #000;
     margin-right: 5px;
 }
 
@@ -83,4 +85,16 @@ body {
 .incorrect {
     background-color: red;
     color: white;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center-align the children */
+    /* ... other styles ... */
+}
+
+.current-guesses, .footer {
+    text-align: center; /* Centers the text within these divs */
+    width: 90%; /* This ensures they take the full width of the container */
 }
