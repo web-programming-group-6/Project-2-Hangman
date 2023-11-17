@@ -1,0 +1,86 @@
+/* style.css */
+body {
+    background: white; /* Set body background to white */
+}
+
+.game-container {
+    margin: 0 auto;
+    background: white; /* Ensure the game container has a white background */
+    width: 1060px;
+    height: 920px;
+    padding: 5px;
+    border: 1px solid #000; /* Thin black border */
+    border-radius: 3px;
+    text-align: center;
+}
+
+.game-title {
+    color: red;
+    font-family: cursive;
+}
+
+/* Removed .game-image-container since it's now redundant with .game-container styling */
+
+.game-image {
+    width: 80%;
+    display: inline-block;
+}
+
+.game-status, .won-message, .lost-message {
+    font-family: cursive;
+}
+
+.won-message {
+    color: darkgreen;
+    font-size: 15px;
+}
+
+.lost-message {
+    color: darkred;
+    font-size: 15px;
+}
+
+.difficulty-container {
+    float: right;
+    display: inline;
+    vertical-align: top;
+    /* Removed background color for difficulty container */
+}
+
+.difficulty-form button, .keyboard-form button {
+    margin: 5px;
+    /* background-color: lightblue; */
+}
+
+.keyboard-form {
+    display: inline-block;
+}
+
+.current-guesses {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    color: black; /* Changed font color for better visibility */
+}
+
+.guess-letter {
+    color: black;
+    font-size: 35px;
+    border-bottom: 3px solid #000;
+    margin-right: 5px;
+}
+
+.footer {
+    vertical-align: bottom;
+    font-family: cursive;
+    color: red;
+}
+.correct {
+    background-color: green;
+    color: white;
+}
+
+.incorrect {
+    background-color: red;
+    color: white;
+}
