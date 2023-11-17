@@ -91,7 +91,7 @@ function getCurrentResponses() {
 // Function to add a user response
 function addResponse($letter) {
     $responses = getCurrentResponses();
-    $responses[$letter] = isLetterCorrect($letter);
+    $responses[strtolower($letter)] = isLetterCorrect($letter);
     $_SESSION["responses"] = $responses;
 }
 
@@ -114,7 +114,6 @@ function isWordCorrect() {
     }
     return true;
 }
-
 
 // Function to check if the hangman is complete
 function isBodyComplete() {
@@ -142,6 +141,9 @@ if (isset($_GET['kp'])) {
             markGameAsComplete();
         } else if (!isLetterCorrect($currentPressedKey)) {
             addPart();
+            if (isBodyComplete()) {
+                markGameAsComplete();
+            }
         }
     }
 }
