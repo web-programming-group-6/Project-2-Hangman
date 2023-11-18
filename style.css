@@ -1,27 +1,34 @@
-/* style.css */
+@import url('https://fonts.cdnfonts.com/css/pirates');
+
 body {
-    background: white; /* Set body background to white */
+    background: #9ae2ff;
+    overflow: hidden;
 }
 
 .game-container {
     margin: 0 auto;
-    background: white; /* Ensure the game container has a white background */
+    background: white;
     width: 1060px;
-    border: 1px solid #000; /* Thin black border */
+    border: 1px solid #000;
     border-radius: 3px;
     text-align: center;
-    padding-bottom: 10px; /* Add padding at the bottom */
-    box-sizing: border-box; /* Include padding and border in the width and height */
+    padding-bottom: 10px;
+    box-sizing: border-box;
 }
 
 .game-title {
     color: red;
-    font-family: pirate;
+    font-family: 'PiratesStoertebecker', sans-serif;
 }
 
-.game-image-container {
-    /* If you want to apply specific styles to this container, do it here */
+#pirate-flag {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
 }
+
+.game-image-container {}
 
 .game-image {
     width: 80%;
@@ -29,7 +36,9 @@ body {
 }
 
 
-.game-status, .won-message, .lost-message {
+.game-status,
+.won-message,
+.lost-message {
     font-family: cursive;
 }
 
@@ -47,10 +56,10 @@ body {
     float: right;
     display: inline;
     vertical-align: top;
-    /* Removed background color for difficulty container */
 }
 
-.difficulty-form button, .keyboard-form button {
+.difficulty-form button,
+.keyboard-form button {
     margin: 5px;
     /* background-color: lightblue; */
 }
@@ -63,7 +72,7 @@ body {
     margin-top: 20px;
     padding: 15px;
     background: white;
-    color: black; /* Changed font color for better visibility */
+    color: black;
 }
 
 .guess-letter {
@@ -77,6 +86,7 @@ body {
     font-family: cursive;
     color: red;
 }
+
 .correct {
     background-color: green;
     color: white;
@@ -90,11 +100,55 @@ body {
 .game-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* This will center-align the children */
-    /* ... other styles ... */
+    align-items: center;
 }
 
-.current-guesses, .footer {
-    text-align: center; /* Centers the text within these divs */
-    width: 90%; /* This ensures they take the full width of the container */
+.current-guesses,
+.footer {
+    text-align: center;
+    width: 90%;
+}
+
+#ship-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+#sailing-ship {
+    position: absolute;
+    bottom: 10px;
+    /* Adjust for the ship's position from the bottom */
+    /* Start from the left outside of the screen and move to the right */
+    animation: sail 20s linear infinite, rock 3s ease-in-out infinite alternate;
+}
+
+@keyframes sail {
+    0% {
+        right: -400px;
+        /* Assuming the ship is 200px wide */
+    }
+
+    100% {
+        right: 100%;
+        /* Move to the right until it's off-screen */
+    }
+}
+
+@keyframes rock {
+    0% {
+        transform: translateY(0) rotate(-4deg);
+        /* Slight tilt to the left */
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(4deg);
+        /* Move up and tilt to the right */
+    }
+
+    100% {
+        transform: translateY(0) rotate(-4deg);
+        /* Back to initial tilt */
+    }
 }

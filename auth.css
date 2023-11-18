@@ -1,0 +1,32 @@
+@import url('https://fonts.cdnfonts.com/css/pirates');
+
+body {
+    background-image: url('./images/ocean-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'PiratesStoertebecker', sans-serif;
+}
+
+.auth-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-message {
+    font-size: 24px;
+    color: #004d60;
+    /* Dark blue color */
+    margin-bottom: 20px;
+}
+
+/* Style your form elements below */
+/* ... */
