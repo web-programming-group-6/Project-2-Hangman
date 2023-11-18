@@ -22,7 +22,8 @@ include 'game.php'; // Include the game logic
     <!-- Main app display -->
     <div class="game-container">
         <!-- ... other elements ... -->
-
+        <div class="game-title">Pirate's Hangman</div>
+        <img src="./images/jolly-roger.png" alt="Pirate Flag" id="pirate-flag" />
         <!-- Display the image here -->
         <div class="game-image-container">
             <?php if (!gameComplete()): ?>
@@ -32,10 +33,10 @@ include 'game.php'; // Include the game logic
             <!-- Indicate game status -->
             <?php if (gameComplete()): ?>
                 <h2 class="game-status">GAME COMPLETE</h2>
-                <?php if ($WON): ?>
-                    <p class="won-message">You Won!</p>
+                <?php if (isset($_SESSION['won']) && $_SESSION['won']): ?>
+                    <p class="won-message">Good aye mate! You'll live to guess another day!</p>
                 <?php else: ?>
-                    <p class="lost-message">HANG, MAN!</p>
+                    <p class="lost-message">Aaaarrrrgggghhhh! Hang ‘Em from the Yardarm!</p>
                 <?php endif; ?>
             <?php endif; ?>
         </div>
@@ -100,6 +101,11 @@ include 'game.php'; // Include the game logic
             <p>DEVELOPED BY GROUP 6</p>
         </div>
     </div>
+
+    <div id="ship-container">
+        <img src="./images/sailing-ship1.png" alt="Sailing Ship" id="sailing-ship" />
+    </div>
+
 </body>
 
 </html>
